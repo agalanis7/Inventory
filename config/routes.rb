@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   match 'users/:id' => 'users#show', via: :get
 
+  root to: 'pages#home'
+
+
 end
