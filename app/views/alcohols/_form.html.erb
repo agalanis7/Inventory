@@ -23,7 +23,9 @@
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :integer, min: 0 %>
+    <label>Select any remaining fraction</label>
+    <%= select_tag "fraction", options_for_select(['0', '.05', '.1', '.15', '.2',  '.25', '.3', '.35', '.4', '.45', '.5', '.55', '.6', '.65', '.7', '.75', '.8', '.85', '.9', '.95'], '0')  %>
   </div>
 
   <div class="actions">

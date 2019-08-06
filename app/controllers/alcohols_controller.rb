@@ -69,6 +69,8 @@ class AlcoholsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def alcohol_params
+      quantity = params[:alcohol][:integer].to_i + params[:fraction].to_f
+      params[:alcohol][:quantity] = quantity
       params.require(:alcohol).permit(:title, :description, :quantity)
     end
 end
