@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   match 'users/:id' => 'users#show', via: :get
 
-  root 'alcohols#index'
+  authenticated :user do
+  root to: 'alcohols#index', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
 
 
 end
